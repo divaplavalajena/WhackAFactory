@@ -1,0 +1,746 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80563CE61E466795005ABCD9 /* SKSpriteNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80563CE51E466795005ABCD9 /* SKSpriteNodeExtension.swift */; };
+		80563CEA1E466A2B005ABCD9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80563CE91E466A2B005ABCD9 /* Config.swift */; };
+		9C1D19C41E462E8A0055FC14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D19C31E462E8A0055FC14 /* AppDelegate.swift */; };
+		9C1D19C61E462E8A0055FC14 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D19C51E462E8A0055FC14 /* GameScene.sks */; };
+		9C1D19CA1E462E8A0055FC14 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D19C91E462E8A0055FC14 /* GameScene.swift */; };
+		9C1D19CC1E462E8A0055FC14 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D19CB1E462E8A0055FC14 /* GameViewController.swift */; };
+		9C1D19CF1E462E8A0055FC14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D19CD1E462E8A0055FC14 /* Main.storyboard */; };
+		9C1D19D11E462E8A0055FC14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D19D01E462E8A0055FC14 /* Assets.xcassets */; };
+		9C1D19D41E462E8A0055FC14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D19D21E462E8A0055FC14 /* LaunchScreen.storyboard */; };
+		9C1D19DF1E462E8A0055FC14 /* WhackARobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D19DE1E462E8A0055FC14 /* WhackARobotTests.swift */; };
+		9C1D19EA1E462E8A0055FC14 /* WhackARobotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D19E91E462E8A0055FC14 /* WhackARobotUITests.swift */; };
+		9C1D1A101E463AC60055FC14 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D1A0F1E463AC60055FC14 /* WhackSlot.swift */; };
+		9C1D1A141E465F260055FC14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D1A131E465F260055FC14 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C1D19DB1E462E8A0055FC14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C1D19B81E462E8A0055FC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C1D19BF1E462E8A0055FC14;
+			remoteInfo = WhackARobot;
+		};
+		9C1D19E61E462E8A0055FC14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C1D19B81E462E8A0055FC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C1D19BF1E462E8A0055FC14;
+			remoteInfo = WhackARobot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B7FB1171932806D8ACF074C /* Pods-WhackARobotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhackARobotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhackARobotTests/Pods-WhackARobotTests.release.xcconfig"; sourceTree = "<group>"; };
+		2E28A85B20EC499FDB0F8F8F /* Pods-WhackARobotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhackARobotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhackARobotTests/Pods-WhackARobotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		52E0BF804CD52EA7C69E296F /* Pods-WhackARobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhackARobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhackARobot/Pods-WhackARobot.release.xcconfig"; sourceTree = "<group>"; };
+		70E9693ED57E88C4F02E0DBD /* Pods-WhackARobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhackARobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhackARobot/Pods-WhackARobot.debug.xcconfig"; sourceTree = "<group>"; };
+		7D465783F68FAB6D87F86060 /* Pods-WhackARobotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhackARobotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhackARobotUITests/Pods-WhackARobotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		80563CE51E466795005ABCD9 /* SKSpriteNodeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSpriteNodeExtension.swift; sourceTree = "<group>"; };
+		80563CE91E466A2B005ABCD9 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		9C1D19C01E462E8A0055FC14 /* WhackARobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackARobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1D19C31E462E8A0055FC14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C1D19C51E462E8A0055FC14 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9C1D19C91E462E8A0055FC14 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9C1D19CB1E462E8A0055FC14 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		9C1D19CE1E462E8A0055FC14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C1D19D01E462E8A0055FC14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C1D19D31E462E8A0055FC14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C1D19D51E462E8A0055FC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1D19DA1E462E8A0055FC14 /* WhackARobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhackARobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1D19DE1E462E8A0055FC14 /* WhackARobotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackARobotTests.swift; sourceTree = "<group>"; };
+		9C1D19E01E462E8A0055FC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1D19E51E462E8A0055FC14 /* WhackARobotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhackARobotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1D19E91E462E8A0055FC14 /* WhackARobotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackARobotUITests.swift; sourceTree = "<group>"; };
+		9C1D19EB1E462E8A0055FC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1D1A0F1E463AC60055FC14 /* WhackSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		9C1D1A131E465F260055FC14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE84A4CBE0999063B183F022 /* Pods-WhackARobotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhackARobotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhackARobotUITests/Pods-WhackARobotUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C1D19BD1E462E8A0055FC14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1D19D71E462E8A0055FC14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1D19E21E462E8A0055FC14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		361A9D3EE68F421C74EA83C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70E9693ED57E88C4F02E0DBD /* Pods-WhackARobot.debug.xcconfig */,
+				52E0BF804CD52EA7C69E296F /* Pods-WhackARobot.release.xcconfig */,
+				2E28A85B20EC499FDB0F8F8F /* Pods-WhackARobotTests.debug.xcconfig */,
+				1B7FB1171932806D8ACF074C /* Pods-WhackARobotTests.release.xcconfig */,
+				7D465783F68FAB6D87F86060 /* Pods-WhackARobotUITests.debug.xcconfig */,
+				FE84A4CBE0999063B183F022 /* Pods-WhackARobotUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6D169451671EC52ED5B766F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80563CE41E466777005ABCD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80563CE51E466795005ABCD9 /* SKSpriteNodeExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9C1D19B71E462E8A0055FC14 = {
+			isa = PBXGroup;
+			children = (
+				9C1D19C21E462E8A0055FC14 /* WhackARobot */,
+				9C1D19F71E462EB30055FC14 /* Not Needed */,
+				9C1D19DD1E462E8A0055FC14 /* WhackARobotTests */,
+				9C1D19E81E462E8A0055FC14 /* WhackARobotUITests */,
+				9C1D19C11E462E8A0055FC14 /* Products */,
+				361A9D3EE68F421C74EA83C9 /* Pods */,
+				6D169451671EC52ED5B766F8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C1D19C11E462E8A0055FC14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C1D19C01E462E8A0055FC14 /* WhackARobot.app */,
+				9C1D19DA1E462E8A0055FC14 /* WhackARobotTests.xctest */,
+				9C1D19E51E462E8A0055FC14 /* WhackARobotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C1D19C21E462E8A0055FC14 /* WhackARobot */ = {
+			isa = PBXGroup;
+			children = (
+				80563CE41E466777005ABCD9 /* Extensions */,
+				9C1D19C31E462E8A0055FC14 /* AppDelegate.swift */,
+				9C1D1A0F1E463AC60055FC14 /* WhackSlot.swift */,
+				9C1D19C91E462E8A0055FC14 /* GameScene.swift */,
+				9C1D19CB1E462E8A0055FC14 /* GameViewController.swift */,
+				9C1D19CD1E462E8A0055FC14 /* Main.storyboard */,
+				9C1D19D01E462E8A0055FC14 /* Assets.xcassets */,
+				9C1D19D21E462E8A0055FC14 /* LaunchScreen.storyboard */,
+				9C1D19D51E462E8A0055FC14 /* Info.plist */,
+				9C1D1A131E465F260055FC14 /* GoogleService-Info.plist */,
+				80563CE91E466A2B005ABCD9 /* Config.swift */,
+			);
+			path = WhackARobot;
+			sourceTree = "<group>";
+		};
+		9C1D19DD1E462E8A0055FC14 /* WhackARobotTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C1D19DE1E462E8A0055FC14 /* WhackARobotTests.swift */,
+				9C1D19E01E462E8A0055FC14 /* Info.plist */,
+			);
+			path = WhackARobotTests;
+			sourceTree = "<group>";
+		};
+		9C1D19E81E462E8A0055FC14 /* WhackARobotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C1D19E91E462E8A0055FC14 /* WhackARobotUITests.swift */,
+				9C1D19EB1E462E8A0055FC14 /* Info.plist */,
+			);
+			path = WhackARobotUITests;
+			sourceTree = "<group>";
+		};
+		9C1D19F71E462EB30055FC14 /* Not Needed */ = {
+			isa = PBXGroup;
+			children = (
+				9C1D19C51E462E8A0055FC14 /* GameScene.sks */,
+			);
+			name = "Not Needed";
+			path = WhackARobot;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C1D19BF1E462E8A0055FC14 /* WhackARobot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C1D19EE1E462E8A0055FC14 /* Build configuration list for PBXNativeTarget "WhackARobot" */;
+			buildPhases = (
+				9F73A67C8FA64012DA758357 /* 📦 Check Pods Manifest.lock */,
+				9C1D19BC1E462E8A0055FC14 /* Sources */,
+				9C1D19BD1E462E8A0055FC14 /* Frameworks */,
+				9C1D19BE1E462E8A0055FC14 /* Resources */,
+				30E56B0C57249B92C0EEE9F4 /* 📦 Embed Pods Frameworks */,
+				969460D14FC42C065A0BCA11 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhackARobot;
+			productName = WhackARobot;
+			productReference = 9C1D19C01E462E8A0055FC14 /* WhackARobot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C1D19D91E462E8A0055FC14 /* WhackARobotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C1D19F11E462E8A0055FC14 /* Build configuration list for PBXNativeTarget "WhackARobotTests" */;
+			buildPhases = (
+				860CFE65581958A0BCBFAB68 /* 📦 Check Pods Manifest.lock */,
+				9C1D19D61E462E8A0055FC14 /* Sources */,
+				9C1D19D71E462E8A0055FC14 /* Frameworks */,
+				9C1D19D81E462E8A0055FC14 /* Resources */,
+				4970AE1C60B658A250987015 /* 📦 Embed Pods Frameworks */,
+				2601D50814FEE23CA3A75C48 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C1D19DC1E462E8A0055FC14 /* PBXTargetDependency */,
+			);
+			name = WhackARobotTests;
+			productName = WhackARobotTests;
+			productReference = 9C1D19DA1E462E8A0055FC14 /* WhackARobotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C1D19E41E462E8A0055FC14 /* WhackARobotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C1D19F41E462E8A0055FC14 /* Build configuration list for PBXNativeTarget "WhackARobotUITests" */;
+			buildPhases = (
+				333B17E6376F097A7258E1A6 /* 📦 Check Pods Manifest.lock */,
+				9C1D19E11E462E8A0055FC14 /* Sources */,
+				9C1D19E21E462E8A0055FC14 /* Frameworks */,
+				9C1D19E31E462E8A0055FC14 /* Resources */,
+				5977A06904B13AD52020A88A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C1D19E71E462E8A0055FC14 /* PBXTargetDependency */,
+			);
+			name = WhackARobotUITests;
+			productName = WhackARobotUITests;
+			productReference = 9C1D19E51E462E8A0055FC14 /* WhackARobotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C1D19B81E462E8A0055FC14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Bella Voce Productions";
+				TargetAttributes = {
+					9C1D19BF1E462E8A0055FC14 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K4SGE5A3WA;
+						ProvisioningStyle = Automatic;
+					};
+					9C1D19D91E462E8A0055FC14 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = BU3R4YBAT8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C1D19BF1E462E8A0055FC14;
+					};
+					9C1D19E41E462E8A0055FC14 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = BU3R4YBAT8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C1D19BF1E462E8A0055FC14;
+					};
+				};
+			};
+			buildConfigurationList = 9C1D19BB1E462E8A0055FC14 /* Build configuration list for PBXProject "WhackARobot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C1D19B71E462E8A0055FC14;
+			productRefGroup = 9C1D19C11E462E8A0055FC14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C1D19BF1E462E8A0055FC14 /* WhackARobot */,
+				9C1D19D91E462E8A0055FC14 /* WhackARobotTests */,
+				9C1D19E41E462E8A0055FC14 /* WhackARobotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C1D19BE1E462E8A0055FC14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1D19CF1E462E8A0055FC14 /* Main.storyboard in Resources */,
+				9C1D19C61E462E8A0055FC14 /* GameScene.sks in Resources */,
+				9C1D19D11E462E8A0055FC14 /* Assets.xcassets in Resources */,
+				9C1D19D41E462E8A0055FC14 /* LaunchScreen.storyboard in Resources */,
+				9C1D1A141E465F260055FC14 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1D19D81E462E8A0055FC14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1D19E31E462E8A0055FC14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2601D50814FEE23CA3A75C48 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhackARobotTests/Pods-WhackARobotTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30E56B0C57249B92C0EEE9F4 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhackARobot/Pods-WhackARobot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		333B17E6376F097A7258E1A6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4970AE1C60B658A250987015 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhackARobotTests/Pods-WhackARobotTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5977A06904B13AD52020A88A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhackARobotUITests/Pods-WhackARobotUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		860CFE65581958A0BCBFAB68 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		969460D14FC42C065A0BCA11 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhackARobot/Pods-WhackARobot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F73A67C8FA64012DA758357 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C1D19BC1E462E8A0055FC14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1D19CA1E462E8A0055FC14 /* GameScene.swift in Sources */,
+				9C1D19CC1E462E8A0055FC14 /* GameViewController.swift in Sources */,
+				9C1D1A101E463AC60055FC14 /* WhackSlot.swift in Sources */,
+				80563CE61E466795005ABCD9 /* SKSpriteNodeExtension.swift in Sources */,
+				9C1D19C41E462E8A0055FC14 /* AppDelegate.swift in Sources */,
+				80563CEA1E466A2B005ABCD9 /* Config.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1D19D61E462E8A0055FC14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1D19DF1E462E8A0055FC14 /* WhackARobotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1D19E11E462E8A0055FC14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1D19EA1E462E8A0055FC14 /* WhackARobotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C1D19DC1E462E8A0055FC14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C1D19BF1E462E8A0055FC14 /* WhackARobot */;
+			targetProxy = 9C1D19DB1E462E8A0055FC14 /* PBXContainerItemProxy */;
+		};
+		9C1D19E71E462E8A0055FC14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C1D19BF1E462E8A0055FC14 /* WhackARobot */;
+			targetProxy = 9C1D19E61E462E8A0055FC14 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C1D19CD1E462E8A0055FC14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C1D19CE1E462E8A0055FC14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C1D19D21E462E8A0055FC14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C1D19D31E462E8A0055FC14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C1D19EC1E462E8A0055FC14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		9C1D19ED1E462E8A0055FC14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C1D19EF1E462E8A0055FC14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70E9693ED57E88C4F02E0DBD /* Pods-WhackARobot.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K4SGE5A3WA;
+				INFOPLIST_FILE = WhackARobot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bellavoceproductions.WhackARobot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9C1D19F01E462E8A0055FC14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52E0BF804CD52EA7C69E296F /* Pods-WhackARobot.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K4SGE5A3WA;
+				INFOPLIST_FILE = WhackARobot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bellavoceproductions.WhackARobot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9C1D19F21E462E8A0055FC14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E28A85B20EC499FDB0F8F8F /* Pods-WhackARobotTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BU3R4YBAT8;
+				INFOPLIST_FILE = WhackARobotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bellavoceproductions.WhackARobotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhackARobot.app/WhackARobot";
+			};
+			name = Debug;
+		};
+		9C1D19F31E462E8A0055FC14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7FB1171932806D8ACF074C /* Pods-WhackARobotTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BU3R4YBAT8;
+				INFOPLIST_FILE = WhackARobotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bellavoceproductions.WhackARobotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhackARobot.app/WhackARobot";
+			};
+			name = Release;
+		};
+		9C1D19F51E462E8A0055FC14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D465783F68FAB6D87F86060 /* Pods-WhackARobotUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = BU3R4YBAT8;
+				INFOPLIST_FILE = WhackARobotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bellavoceproductions.WhackARobotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WhackARobot;
+			};
+			name = Debug;
+		};
+		9C1D19F61E462E8A0055FC14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE84A4CBE0999063B183F022 /* Pods-WhackARobotUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = BU3R4YBAT8;
+				INFOPLIST_FILE = WhackARobotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bellavoceproductions.WhackARobotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WhackARobot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C1D19BB1E462E8A0055FC14 /* Build configuration list for PBXProject "WhackARobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1D19EC1E462E8A0055FC14 /* Debug */,
+				9C1D19ED1E462E8A0055FC14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C1D19EE1E462E8A0055FC14 /* Build configuration list for PBXNativeTarget "WhackARobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1D19EF1E462E8A0055FC14 /* Debug */,
+				9C1D19F01E462E8A0055FC14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C1D19F11E462E8A0055FC14 /* Build configuration list for PBXNativeTarget "WhackARobotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1D19F21E462E8A0055FC14 /* Debug */,
+				9C1D19F31E462E8A0055FC14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C1D19F41E462E8A0055FC14 /* Build configuration list for PBXNativeTarget "WhackARobotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1D19F51E462E8A0055FC14 /* Debug */,
+				9C1D19F61E462E8A0055FC14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C1D19B81E462E8A0055FC14 /* Project object */;
+}
