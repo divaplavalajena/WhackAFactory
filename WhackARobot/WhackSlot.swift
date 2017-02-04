@@ -23,7 +23,7 @@ class WhackSlot: SKNode {
 //        addChild(spriteHole)
         
         let cropNode = SKCropNode()
-        charNode = SKSpriteNode(imageNamed: "Bot_CFLogoWhite")
+        charNode = SKSpriteNode(imageNamed: "Bot_CFLogoWhite.png")
         if UIApplication.shared.statusBarOrientation == .portrait || UIApplication.shared.statusBarOrientation == .portraitUpsideDown {
             cropNode.xScale = 4/3
             cropNode.yScale = 4/3
@@ -32,7 +32,7 @@ class WhackSlot: SKNode {
         cropNode.zPosition = 1
         cropNode.maskNode = SKSpriteNode(imageNamed: "mask_horizontal")
         
-        charNode = SKSpriteNode(imageNamed: "Bot_CFLogoWhite")
+        charNode = SKSpriteNode(imageNamed: "Bot_CFLogoWhite.png")
         charNode.xScale = 1/3
         charNode.yScale = 1/3
         charNode.position = CGPoint(x: 0, y: -charNode.size.height)

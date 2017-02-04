@@ -34,7 +34,7 @@ class GameScene: SKScene {
         let iPadsRef = ref.child("ipads")
 
         
-        let background = SKSpriteNode(imageNamed: "Background_Horizontal")
+        let background = SKSpriteNode(imageNamed: "Background_Horizontal.png")
         background.setToLandscapeViewBounds(scene: self, view: view)
         if UIApplication.shared.statusBarOrientation == .portrait || UIApplication.shared.statusBarOrientation == .portraitUpsideDown {
             background.setToPortraitViewBounds(scene: self, view: view)
