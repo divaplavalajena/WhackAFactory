@@ -40,20 +40,33 @@ class WhackSlot: SKNode {
         cropNode.addChild(charNode)
         
         addChild(cropNode)
-        
-        charNode.run(SKAction.move(
-            to: CGPoint(x:0, y: 95),
-            duration: TimeInterval(0.5)
-        ))
-        
+
+    }
+    
+    func ascend(){
+        if charNode != nil {
+            charNode.run(SKAction.move(
+                to: CGPoint(x:0, y: 95),
+                duration: TimeInterval(0.5)
+            ))
+        }
     }
     
     func descend(){
         if charNode != nil {
-            charNode.run(SKAction.move(
+            let descendAction = (SKAction.move(
                 to: CGPoint(x:0, y: -charNode.size.height),
                 duration: TimeInterval(0.5)
             ))
+            
+            let removeFromParent = SKAction.run {
+                self.removeFromParent()
+            }
+            
+            charNode.run(SKAction.sequence([
+                descendAction,
+                removeFromParent
+            ]))
         }
     }
     

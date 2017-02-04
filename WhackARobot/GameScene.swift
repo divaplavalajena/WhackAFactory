@@ -39,7 +39,7 @@ class GameScene: SKScene {
         if UIApplication.shared.statusBarOrientation == .portrait || UIApplication.shared.statusBarOrientation == .portraitUpsideDown {
             background.setToPortraitViewBounds(scene: self, view: view)
         }
-        background.blendMode = .replace
+        // background.blendMode = .replace
         background.zPosition = -1
         addChild(background)
         
@@ -98,8 +98,6 @@ class GameScene: SKScene {
     }
     
     func showMole(){
-        print(self.view?.bounds)
-        
         if UIApplication.shared.statusBarOrientation == .portrait || UIApplication.shared.statusBarOrientation == .portraitUpsideDown {
             createSlot(at: CGPoint(x: (self.view?.bounds.width)!/2 , y: (self.view?.bounds.height)!/2))
         } else {
@@ -110,10 +108,6 @@ class GameScene: SKScene {
     
     func hideMoleIfPresent(){
         self.currentSlot.descend()
-        let when = DispatchTime.now() + 1 // seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.currentSlot.removeFromParent()
-        }
         self.molePresent = false
     }
     
@@ -122,6 +116,7 @@ class GameScene: SKScene {
         slot.configure(at: position)
         addChild(slot)
         self.currentSlot = slot
+        self.currentSlot.ascend()
     }
     
     
@@ -168,6 +163,7 @@ class GameScene: SKScene {
             let iPadRef = ref.child("ipads").child(moleIndex)
             iPadRef.updateChildValues(["mole": false])
             self.hideMoleIfPresent()
+            self.molePresent = false
         }
 //        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
