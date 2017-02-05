@@ -10,26 +10,39 @@ import SpriteKit
 import GameplayKit
 import Firebase
 
+
 class GameScene: SKScene {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
     
-//    var slots = [WhackSlot]()
     var currentSlot = WhackSlot()
+    var screensaver = ScreenSaver()
+    var screensaverTimeout = Timer()
+    var screensaverEnabled = false
+    var screensaverBG = SKShapeNode()
     
     var ref: FIRDatabaseReference!
     var moleIndex = "000" // Firebase index
     var molePresent = false
-
+    
+    /*
     var gameScore: SKLabelNode!
     var score: Int = 0 {
         didSet {
             gameScore.text = "Score: \(score)"
         }
     }
+    */
+    //var button: SKLabelNode! //reset the score and start a new game
+    
+    func startTimer(){
+        self.screensaverTimeout = Timer.scheduledTimer(timeInterval: 5 * 60, target: self, selector: #selector(self.enableScreensaver), userInfo: nil, repeats: true);
+
+    }
+    
     
     override func didMove(to view: SKView) {
+        self.startTimer()
+        
         ref = FIRDatabase.database().reference()
         let iPadsRef = ref.child("ipads")
 
@@ -44,18 +57,37 @@ class GameScene: SKScene {
         addChild(background)
         
         /*
+        //Game score label
         gameScore = SKLabelNode(fontNamed: "Chalkduster")
-        gameScore.text = "Score: 0"
+        gameScore.text = "Score: \(score)"
         gameScore.position = CGPoint(x: 8, y: 8)
         gameScore.horizontalAlignmentMode = .left
         gameScore.fontSize = 48
         addChild(gameScore)
         */
         
+        /*
+        // Create a RESET BUTTON for the game score
+            // It was... a simple red rectangle that's 100x44
+            //button = SKLabelNode(color: SKColor.red, size: CGSize(width: 100, height: 44))
+        button = SKLabelNode(fontNamed: "Chalkduster")
+        button = SKLabelNode(text: "Reset Game")
+        button.fontColor = SKColor.red
+        button.fontSize = 65
+        
+        // Put it in the upper right corner
+        //button.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
+        button.verticalAlignmentMode = .top
+        button.horizontalAlignmentMode = .right
+        button.position = CGPoint(x:self.size.width, y:self.size.height)
+        self.addChild(button)
+        */
+        
         iPadsRef.observe(FIRDataEventType.value, with: { (snapshot) in
             for child in (snapshot.children) {
                 let snap = child as! FIRDataSnapshot //each child is a snapshot
                 if snap.value != nil {
+                    self.disableScreensaver()
                     let dict = snap.value as! [String: Any] // the value is a dictionary
                     if (dict["id"]! as! Int == gameiPadID) {
                         if self.moleIndex == "000"{
@@ -74,27 +106,6 @@ class GameScene: SKScene {
         
         })
         
-        /*
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-        
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(M_PI), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
-        */
     }
     
     func showMole(){
@@ -109,6 +120,10 @@ class GameScene: SKScene {
     func hideMoleIfPresent(){
         self.currentSlot.descend()
         self.molePresent = false
+        run(SKAction.playSoundFileNamed("successful.mp3", waitForCompletion: false))
+        //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
+        //score = score + 1
     }
     
     func createSlot(at position: CGPoint) {
@@ -117,56 +132,76 @@ class GameScene: SKScene {
         addChild(slot)
         self.currentSlot = slot
         self.currentSlot.ascend()
+        //play sound
+        run(SKAction.playSoundFileNamed("gotItem.mp3", waitForCompletion: false))
+        //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
     }
     
-    
-    
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
+    func enableScreensaver(){
+        if screensaverEnabled == false {
+            print("enabling screensaver")
+            screensaverEnabled = true
+            screensaverTimeout.invalidate()
+            if molePresent{
+                currentSlot.isHidden = true
+            }
+            
+            let size = self.view!.bounds.size
+            self.screensaverBG = SKShapeNode(rectOf: size)
+            self.screensaverBG.position = CGPoint(x: size.width/2, y: size.height/2)
+            self.screensaverBG.isAntialiased = false
+            self.screensaverBG.fillColor = SKColor.black
+            self.screensaverBG.alpha = 0.65
+            addChild(self.screensaverBG)
+
+            self.screensaver = ScreenSaver(imageNamed: "screensaver")
+            self.screensaver.bounds = (self.view?.bounds.size)!
+            self.screensaver.config()
+            addChild(self.screensaver)
         }
     }
     
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
+    func disableScreensaver(){
+        if screensaverEnabled == true{
+            print("disabling screensaver")
+            screensaverEnabled = false
+            screensaverTimeout.invalidate()
+            startTimer()
+            if molePresent{
+                currentSlot.isHidden = false
+            }
+            self.screensaverBG.removeFromParent()
+            self.screensaver.removeFromParent()
+            
         }
     }
     
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        /*
+        // Loop over all the touches in this event
+        // If SCORE is added to Firebase at some point
+        for touch: AnyObject in touches {
+            // Get the location of the touch in this scene
+            let location = touch.location(in: self)
+            // Check if the location of the touch is within the button's bounds
+            if button.contains(location) {
+                print("tapped!")
+                score = 0
+            }
+            if molePresent {
+                self.hideMoleIfPresent()
+            }
+        }
+        */
         if molePresent {
             self.hideMoleIfPresent()
         }
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        self.disableScreensaver()
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
     
     
     override func update(_ currentTime: TimeInterval) {
