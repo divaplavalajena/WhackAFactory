@@ -36,7 +36,7 @@ class GameScene: SKScene {
     }
     
     func startTimer(){
-        self.screensaverTimeout = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.enableScreensaver), userInfo: nil, repeats: true);
+        self.screensaverTimeout = Timer.scheduledTimer(timeInterval: 5 * 60, target: self, selector: #selector(self.enableScreensaver), userInfo: nil, repeats: true);
 
     }
     
