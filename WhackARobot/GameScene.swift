@@ -41,6 +41,7 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        UIApplication.shared.isIdleTimerDisabled = true
         self.startTimer()
         
         ref = FIRDatabase.database().reference()
