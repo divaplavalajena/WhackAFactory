@@ -138,7 +138,7 @@ class GameScene: SKScene {
     }
     
     func addScreenSaver(){
-        self.screensaver = ScreenSaver(imageNamed: "temp_saver")
+        self.screensaver = ScreenSaver(imageNamed: "screensaver")
         self.screensaver.bounds = (self.view?.bounds.size)!
         self.screensaver.config()
         addChild(self.screensaver)

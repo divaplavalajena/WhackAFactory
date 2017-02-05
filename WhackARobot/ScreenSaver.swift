@@ -16,6 +16,8 @@ class ScreenSaver: SKSpriteNode {
     var animation_speed = 1.0
     
     func config(){
+        self.size = CGSize(width: 400, height: 400)
+        
         self.run(SKAction.repeatForever(
             SKAction.sequence([
                     SKAction.run {self.changeDirection()},
