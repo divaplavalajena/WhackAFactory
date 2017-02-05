@@ -118,12 +118,14 @@ class GameScene: SKScene {
     }
     
     func hideMoleIfPresent(){
-        self.currentSlot.descend()
-        self.molePresent = false
-        run(SKAction.playSoundFileNamed("successful.mp3", waitForCompletion: false))
-        //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
-        run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
-        //score = score + 1
+        if self.molePresent == true {
+            self.currentSlot.descend()
+            self.molePresent = false
+            run(SKAction.playSoundFileNamed("successful.mp3", waitForCompletion: false))
+            //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
+            run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
+            //score = score + 1
+        }
     }
     
     func createSlot(at position: CGPoint) {
