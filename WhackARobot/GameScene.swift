@@ -188,13 +188,6 @@ class GameScene: SKScene {
             }
             self.screensaverBG.removeFromParent()
             self.screensaver.removeFromParent()
-            
-            // Trigger backend update to wake all iPads
-            self.ref = FIRDatabase.database().reference()
-            let wallScreenSaverRef = self.ref.child("wallscreensavers")
-            
-            let timestamp = Int(NSDate().timeIntervalSince1970)
-            wallScreenSaverRef.updateChildValues(["wall\(gameWallID)": timestamp])
         }
     }
     
@@ -220,6 +213,14 @@ class GameScene: SKScene {
         if molePresent {
             self.hideMoleIfPresent()
         }
+        
+        // Trigger backend update to wake all iPads
+        self.ref = FIRDatabase.database().reference()
+        let wallScreenSaverRef = self.ref.child("wallscreensavers")
+        
+        let timestamp = NSDate().timeIntervalSince1970
+        wallScreenSaverRef.updateChildValues(["wall\(gameWallID)": timestamp])
+        
         self.disableScreensaver()
     }
     
