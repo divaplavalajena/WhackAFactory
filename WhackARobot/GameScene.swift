@@ -46,6 +46,7 @@ class GameScene: SKScene {
         
         ref = FIRDatabase.database().reference()
         let iPadsRef = ref.child("ipads")
+        let screensaversRef = ref.child("wallscreensavers")
 
         
         let background = SKSpriteNode(imageNamed: "Background_Horizontal.png")
@@ -105,6 +106,17 @@ class GameScene: SKScene {
                 
             }
         
+        })
+        
+        screensaversRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            for child in (snapshot.children) {
+                let snap = child as! FIRDataSnapshot //each child is a snapshot
+                if snap.value != nil {
+                    self.disableScreensaver()
+                }
+                
+            }
+            
         })
         
     }
@@ -177,6 +189,12 @@ class GameScene: SKScene {
             self.screensaverBG.removeFromParent()
             self.screensaver.removeFromParent()
             
+            // Trigger backend update to wake all iPads
+            self.ref = FIRDatabase.database().reference()
+            let wallScreenSaverRef = self.ref.child("wallscreensavers")
+            
+            let timestamp = Int(NSDate().timeIntervalSince1970)
+            wallScreenSaverRef.updateChildValues(["wall\(gameWallID)": timestamp])
         }
     }
     
