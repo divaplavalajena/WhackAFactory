@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 import Firebase
-import AVFoundation
+
 
 class GameScene: SKScene {
     
@@ -20,13 +20,15 @@ class GameScene: SKScene {
     var moleIndex = "000" // Firebase index
     var molePresent = false
     
-
+    /*
     var gameScore: SKLabelNode!
     var score: Int = 0 {
         didSet {
             gameScore.text = "Score: \(score)"
         }
     }
+    */
+    //var button: SKLabelNode! //reset the score and start a new game
     
     override func didMove(to view: SKView) {
         ref = FIRDatabase.database().reference()
@@ -42,14 +44,32 @@ class GameScene: SKScene {
         background.zPosition = -1
         addChild(background)
         
-        
+        /*
+        //Game score label
         gameScore = SKLabelNode(fontNamed: "Chalkduster")
         gameScore.text = "Score: \(score)"
         gameScore.position = CGPoint(x: 8, y: 8)
         gameScore.horizontalAlignmentMode = .left
         gameScore.fontSize = 48
         addChild(gameScore)
- 
+        */
+        
+        /*
+        // Create a RESET BUTTON for the game score
+            // It was... a simple red rectangle that's 100x44
+            //button = SKLabelNode(color: SKColor.red, size: CGSize(width: 100, height: 44))
+        button = SKLabelNode(fontNamed: "Chalkduster")
+        button = SKLabelNode(text: "Reset Game")
+        button.fontColor = SKColor.red
+        button.fontSize = 65
+        
+        // Put it in the upper right corner
+        //button.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
+        button.verticalAlignmentMode = .top
+        button.horizontalAlignmentMode = .right
+        button.position = CGPoint(x:self.size.width, y:self.size.height)
+        self.addChild(button)
+        */
         
         iPadsRef.observe(FIRDataEventType.value, with: { (snapshot) in
             for child in (snapshot.children) {
@@ -88,7 +108,9 @@ class GameScene: SKScene {
         self.currentSlot.descend()
         self.molePresent = false
         run(SKAction.playSoundFileNamed("successful.mp3", waitForCompletion: false))
-        score = score + 1
+        //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
+        //score = score + 1
     }
     
     func createSlot(at position: CGPoint) {
@@ -99,16 +121,34 @@ class GameScene: SKScene {
         self.currentSlot.ascend()
         //play sound
         run(SKAction.playSoundFileNamed("gotItem.mp3", waitForCompletion: false))
+        //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
     }
     
     
     
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        /*
+        // Loop over all the touches in this event
+        // If SCORE is added to Firebase at some point
+        for touch: AnyObject in touches {
+            // Get the location of the touch in this scene
+            let location = touch.location(in: self)
+            // Check if the location of the touch is within the button's bounds
+            if button.contains(location) {
+                print("tapped!")
+                score = 0
+            }
+            if molePresent {
+                self.hideMoleIfPresent()
+            }
+        }
+        */
         if molePresent {
             self.hideMoleIfPresent()
         }
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        
     }
     
     
