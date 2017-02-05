@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		80563CE61E466795005ABCD9 /* SKSpriteNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80563CE51E466795005ABCD9 /* SKSpriteNodeExtension.swift */; };
 		80563CEA1E466A2B005ABCD9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80563CE91E466A2B005ABCD9 /* Config.swift */; };
+		8086AE431E47925300A5AECC /* ScreenSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8086AE421E47925300A5AECC /* ScreenSaver.swift */; };
 		9C1D19C41E462E8A0055FC14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D19C31E462E8A0055FC14 /* AppDelegate.swift */; };
 		9C1D19C61E462E8A0055FC14 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D19C51E462E8A0055FC14 /* GameScene.sks */; };
 		9C1D19CA1E462E8A0055FC14 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D19C91E462E8A0055FC14 /* GameScene.swift */; };
@@ -49,6 +50,7 @@
 		7D465783F68FAB6D87F86060 /* Pods-WhackARobotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhackARobotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhackARobotUITests/Pods-WhackARobotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		80563CE51E466795005ABCD9 /* SKSpriteNodeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSpriteNodeExtension.swift; sourceTree = "<group>"; };
 		80563CE91E466A2B005ABCD9 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		8086AE421E47925300A5AECC /* ScreenSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSaver.swift; sourceTree = "<group>"; };
 		9C1D19C01E462E8A0055FC14 /* WhackARobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackARobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1D19C31E462E8A0055FC14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C1D19C51E462E8A0055FC14 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				80563CE41E466777005ABCD9 /* Extensions */,
 				9C1D19C31E462E8A0055FC14 /* AppDelegate.swift */,
 				9C1D1A0F1E463AC60055FC14 /* WhackSlot.swift */,
+				8086AE421E47925300A5AECC /* ScreenSaver.swift */,
 				9C1D19C91E462E8A0055FC14 /* GameScene.swift */,
 				9C1D19CB1E462E8A0055FC14 /* GameViewController.swift */,
 				9C1D19CD1E462E8A0055FC14 /* Main.storyboard */,
@@ -469,6 +472,7 @@
 				9C1D19CA1E462E8A0055FC14 /* GameScene.swift in Sources */,
 				9C1D19CC1E462E8A0055FC14 /* GameViewController.swift in Sources */,
 				9C1D1A101E463AC60055FC14 /* WhackSlot.swift in Sources */,
+				8086AE431E47925300A5AECC /* ScreenSaver.swift in Sources */,
 				80563CE61E466795005ABCD9 /* SKSpriteNodeExtension.swift in Sources */,
 				9C1D19C41E462E8A0055FC14 /* AppDelegate.swift in Sources */,
 				80563CEA1E466A2B005ABCD9 /* Config.swift in Sources */,

@@ -18,6 +18,7 @@ class GameScene: SKScene {
     
 //    var slots = [WhackSlot]()
     var currentSlot = WhackSlot()
+    var screensaver = ScreenSaver()
     
     var ref: FIRDatabaseReference!
     var moleIndex = "000" // Firebase index
@@ -97,6 +98,9 @@ class GameScene: SKScene {
                                               SKAction.removeFromParent()]))
         }
         */
+        
+        
+        addScreenSaver()
     }
     
     func showMole(){
@@ -133,6 +137,12 @@ class GameScene: SKScene {
         */
     }
     
+    func addScreenSaver(){
+        self.screensaver = ScreenSaver(imageNamed: "temp_saver")
+        self.screensaver.bounds = (self.view?.bounds.size)!
+        self.screensaver.config()
+        addChild(self.screensaver)
+    }
     
     
     func touchDown(atPoint pos : CGPoint) {
