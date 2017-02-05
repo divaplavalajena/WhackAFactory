@@ -21,6 +21,7 @@ class GameScene: SKScene {
     var screensaver = ScreenSaver()
     var screensaverTimeout = Timer()
     var screensaverEnabled = false
+    var screensaverBG = SKShapeNode()
     
     var ref: FIRDatabaseReference!
     var moleIndex = "000" // Firebase index
@@ -35,7 +36,7 @@ class GameScene: SKScene {
     }
     
     func startTimer(){
-        self.screensaverTimeout = Timer.scheduledTimer(timeInterval: 5 * 60, target: self, selector: #selector(self.enableScreensaver), userInfo: nil, repeats: true);
+        self.screensaverTimeout = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.enableScreensaver), userInfo: nil, repeats: true);
 
     }
     
@@ -156,6 +157,14 @@ class GameScene: SKScene {
             if molePresent{
                 currentSlot.isHidden = true
             }
+            
+            let size = self.view!.bounds.size
+            self.screensaverBG = SKShapeNode(rectOf: size)
+            self.screensaverBG.position = CGPoint(x: size.width/2, y: size.height/2)
+            self.screensaverBG.fillColor = SKColor.black
+            self.screensaverBG.alpha = 0.5
+            addChild(self.screensaverBG)
+
             self.screensaver = ScreenSaver(imageNamed: "screensaver")
             self.screensaver.bounds = (self.view?.bounds.size)!
             self.screensaver.config()
@@ -172,6 +181,7 @@ class GameScene: SKScene {
             if molePresent{
                 currentSlot.isHidden = false
             }
+            self.screensaverBG.removeFromParent()
             self.screensaver.removeFromParent()
             
         }
