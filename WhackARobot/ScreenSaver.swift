@@ -13,7 +13,7 @@ class ScreenSaver: SKSpriteNode {
     
     var L_R = "left"
     var bounds = CGSize()
-    var animation_speed = 1.0
+    var animation_speed = 5.0
     
     func config(){
         self.size = CGSize(width: 400, height: 400)
@@ -44,7 +44,7 @@ class ScreenSaver: SKSpriteNode {
             
             self.L_R = "right"
         } else {
-            let x = CGFloat(0)
+            let x = self.bounds.width/2
             let usable_height = self.bounds.height - (self.size.height / 2) + 100
             
             let y = CGFloat(arc4random_uniform(UInt32(usable_height)))

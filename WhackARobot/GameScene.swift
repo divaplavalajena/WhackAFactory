@@ -161,8 +161,9 @@ class GameScene: SKScene {
             let size = self.view!.bounds.size
             self.screensaverBG = SKShapeNode(rectOf: size)
             self.screensaverBG.position = CGPoint(x: size.width/2, y: size.height/2)
+            self.screensaverBG.isAntialiased = false
             self.screensaverBG.fillColor = SKColor.black
-            self.screensaverBG.alpha = 0.5
+            self.screensaverBG.alpha = 0.65
             addChild(self.screensaverBG)
 
             self.screensaver = ScreenSaver(imageNamed: "screensaver")
