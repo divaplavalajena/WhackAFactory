@@ -8,13 +8,17 @@
 
 import UIKit
 import SpriteKit
+import Firebase
 
 class WhackSlot: SKNode {
     
     var charNode: SKSpriteNode!
-    
-    func configure(at position: CGPoint) {
+    var ref: FIRDatabaseReference!
+    var moleIndex = "000"
+
+    func configure(at position: CGPoint, moleIndex: String) {
         self.position = CGPoint(x: position.x, y: position.y)
+        self.moleIndex = moleIndex
 
 //        let spriteBot = SKSpriteNode(imageNamed: "Bot_CFLogoWhite")
 //        addChild(spriteBot)
@@ -59,12 +63,20 @@ class WhackSlot: SKNode {
                 duration: TimeInterval(0.5)
             ))
             
+            let removeFromDB = SKAction.run {
+                self.ref = FIRDatabase.database().reference()
+                let iPadRef = self.ref.child("ipads").child(self.moleIndex)
+                iPadRef.updateChildValues(["mole": false])
+            }
+            
             let removeFromParent = SKAction.run {
                 self.removeFromParent()
             }
             
             charNode.run(SKAction.sequence([
                 descendAction,
+                SKAction.wait(forDuration: 0.5),
+                removeFromDB,
                 removeFromParent
             ]))
         }

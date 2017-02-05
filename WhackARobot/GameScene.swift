@@ -113,7 +113,7 @@ class GameScene: SKScene {
     
     func createSlot(at position: CGPoint) {
         let slot = WhackSlot()
-        slot.configure(at: position)
+        slot.configure(at: position, moleIndex: self.moleIndex)
         addChild(slot)
         self.currentSlot = slot
         self.currentSlot.ascend()
@@ -159,11 +159,7 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if molePresent {
-            ref = FIRDatabase.database().reference()
-            let iPadRef = ref.child("ipads").child(moleIndex)
-            iPadRef.updateChildValues(["mole": false])
             self.hideMoleIfPresent()
-            self.molePresent = false
         }
 //        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }

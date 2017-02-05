@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Background_Horizontal.png",
+      "filename" : "Background_Horizontal-1.png",
       "scale" : "1x"
     },
     {
@@ -12,15 +12,6 @@
     {
       "idiom" : "universal",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "ipad",
-      "filename" : "Background_Horizontal-1.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "scale" : "2x"
     }
   ],
   "info" : {
