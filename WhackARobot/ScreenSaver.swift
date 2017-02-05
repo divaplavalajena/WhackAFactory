@@ -44,7 +44,7 @@ class ScreenSaver: SKSpriteNode {
             
             self.L_R = "right"
         } else {
-            let x = self.bounds.width/2
+            let x = self.bounds.width/4
             let usable_height = self.bounds.height - (self.size.height / 2) + 100
             
             let y = CGFloat(arc4random_uniform(UInt32(usable_height)))
