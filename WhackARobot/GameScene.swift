@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 import Firebase
+import AVFoundation
 
 class GameScene: SKScene {
     
@@ -21,6 +22,7 @@ class GameScene: SKScene {
     var ref: FIRDatabaseReference!
     var moleIndex = "000" // Firebase index
     var molePresent = false
+    
 
     var gameScore: SKLabelNode!
     var score: Int = 0 {
@@ -109,6 +111,7 @@ class GameScene: SKScene {
     func hideMoleIfPresent(){
         self.currentSlot.descend()
         self.molePresent = false
+        run(SKAction.playSoundFileNamed("successful.mp3", waitForCompletion: false))
     }
     
     func createSlot(at position: CGPoint) {
@@ -117,6 +120,17 @@ class GameScene: SKScene {
         addChild(slot)
         self.currentSlot = slot
         self.currentSlot.ascend()
+        //play sound
+        run(SKAction.playSoundFileNamed("gotItem.mp3", waitForCompletion: false))
+        /*
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: successful)
+            audioPlayer.prepareToPlay()
+        }
+        catch let error {
+            // handle error
+        }
+        */
     }
     
     
