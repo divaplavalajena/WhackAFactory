@@ -15,6 +15,10 @@ class GameScene: SKScene {
     
     
     var currentSlot = WhackSlot()
+    var screensaver = ScreenSaver()
+    var screensaverTimeout = Timer()
+    var screensaverEnabled = false
+    var screensaverBG = SKShapeNode()
     
     var ref: FIRDatabaseReference!
     var moleIndex = "000" // Firebase index
@@ -30,9 +34,19 @@ class GameScene: SKScene {
     */
     //var button: SKLabelNode! //reset the score and start a new game
     
+    func startTimer(){
+        self.screensaverTimeout = Timer.scheduledTimer(timeInterval: 5 * 60, target: self, selector: #selector(self.enableScreensaver), userInfo: nil, repeats: true);
+
+    }
+    
+    
     override func didMove(to view: SKView) {
+        UIApplication.shared.isIdleTimerDisabled = true
+        self.startTimer()
+        
         ref = FIRDatabase.database().reference()
         let iPadsRef = ref.child("ipads")
+        let screensaversRef = ref.child("wallscreensavers")
 
         
         let background = SKSpriteNode(imageNamed: "Background_Horizontal.png")
@@ -75,6 +89,7 @@ class GameScene: SKScene {
             for child in (snapshot.children) {
                 let snap = child as! FIRDataSnapshot //each child is a snapshot
                 if snap.value != nil {
+                    self.disableScreensaver()
                     let dict = snap.value as! [String: Any] // the value is a dictionary
                     if (dict["id"]! as! Int == gameiPadID) {
                         if self.moleIndex == "000"{
@@ -93,6 +108,17 @@ class GameScene: SKScene {
         
         })
         
+        screensaversRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            for child in (snapshot.children) {
+                let snap = child as! FIRDataSnapshot //each child is a snapshot
+                if snap.value != nil {
+                    self.disableScreensaver()
+                }
+                
+            }
+            
+        })
+        
     }
     
     func showMole(){
@@ -105,12 +131,14 @@ class GameScene: SKScene {
     }
     
     func hideMoleIfPresent(){
-        self.currentSlot.descend()
-        self.molePresent = false
-        run(SKAction.playSoundFileNamed("successful.mp3", waitForCompletion: false))
-        //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
-        run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
-        //score = score + 1
+        if self.molePresent == true {
+            self.currentSlot.descend()
+            self.molePresent = false
+            run(SKAction.playSoundFileNamed("successful.mp3", waitForCompletion: false))
+            //run(SKAction.playSoundFileNamed("MetalClang.mp3", waitForCompletion: false))
+            run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
+            //score = score + 1
+        }
     }
     
     func createSlot(at position: CGPoint) {
@@ -125,6 +153,43 @@ class GameScene: SKScene {
         run(SKAction.playSoundFileNamed("MetalGearRattling.mp3", waitForCompletion: false))
     }
     
+    func enableScreensaver(){
+        if screensaverEnabled == false {
+            print("enabling screensaver")
+            screensaverEnabled = true
+            screensaverTimeout.invalidate()
+            if molePresent{
+                currentSlot.isHidden = true
+            }
+            
+            let size = self.view!.bounds.size
+            self.screensaverBG = SKShapeNode(rectOf: size)
+            self.screensaverBG.position = CGPoint(x: size.width/2, y: size.height/2)
+            self.screensaverBG.isAntialiased = false
+            self.screensaverBG.fillColor = SKColor.black
+            self.screensaverBG.alpha = 0.65
+            addChild(self.screensaverBG)
+
+            self.screensaver = ScreenSaver(imageNamed: "screensaver")
+            self.screensaver.bounds = (self.view?.bounds.size)!
+            self.screensaver.config()
+            addChild(self.screensaver)
+        }
+    }
+    
+    func disableScreensaver(){
+        if screensaverEnabled == true{
+            print("disabling screensaver")
+            screensaverEnabled = false
+            screensaverTimeout.invalidate()
+            startTimer()
+            if molePresent{
+                currentSlot.isHidden = false
+            }
+            self.screensaverBG.removeFromParent()
+            self.screensaver.removeFromParent()
+        }
+    }
     
     
     
@@ -149,6 +214,14 @@ class GameScene: SKScene {
             self.hideMoleIfPresent()
         }
         
+        // Trigger backend update to wake all iPads
+        self.ref = FIRDatabase.database().reference()
+        let wallScreenSaverRef = self.ref.child("wallscreensavers")
+        
+        let timestamp = NSDate().timeIntervalSince1970
+        wallScreenSaverRef.updateChildValues(["wall\(gameWallID)": timestamp])
+        
+        self.disableScreensaver()
     }
     
     
